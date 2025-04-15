@@ -50,18 +50,24 @@ urlpatterns = [
         "drivers/<int:pk>/", DriverDetailView.as_view(), name="driver-detail"
     ),
     path("drivers/create/", DriverCreateView.as_view(), name="driver-form"),
-    path("drivers/<int:pk>/update/",
-         DriverUpdateView.as_view(),
-         name="driver-form"),
-    path("drivers/<int:pk>/delete/",
-         DriverDeleteView.as_view(),
-         name="driver-delete"),
+    path(
+        "drivers/<int:pk>/update/",
+        DriverUpdateView.as_view(),
+        name="driver-form"
+    ),
+    path(
+        "drivers/<int:pk>/delete/",
+        DriverDeleteView.as_view(),
+        name="driver-delete"
+    ),
     path("cars/<int:car_id>/assign/",
          AssignMeToCarView.as_view(),
          name="assign_me_to_car"),
-    path("cars/<int:car_id>/remove/",
-         RemoveMeFromCarView.as_view(),
-         name="remove_me_from_car"),
+    path(
+        "cars/<int:car_id>/remove/",
+        RemoveMeFromCarView.as_view(),
+        name="remove_me_from_car"
+    ),
 ]
 
 app_name = "taxi"
